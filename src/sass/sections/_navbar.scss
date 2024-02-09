@@ -1,0 +1,95 @@
+// _navbar.scss
+
+nav {
+    position: fixed;  // Add this line to make the navbar fixed
+    top: 0;           // Add this line to position it at the top of the viewport
+    width: 100%;      // Add this line to make it full width
+    background-color: rgba(51, 51, 51, 0.8);;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;  // Set a high z-index value
+  
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+  
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+  
+      li {
+        margin-right: 20px;
+  
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+  
+          &:hover {
+            border-bottom: 2px solid #fff;
+          }
+        }
+      }
+    }
+
+    // Responsive adjustments
+    @include respond(phone) {
+        padding: 1rem;
+        flex-direction: row;
+        align-items: center;
+
+        .logo {
+            margin-bottom: 1rem;
+        }
+
+        .nav-links li {
+            margin-right: 0;
+            margin-bottom: 10px;
+            padding: 6px;
+        }
+    }
+
+    @include respond(tab-land) {
+        .logo {
+            font-size: 1.2rem;
+        }
+
+        .nav-links li {
+            margin-right: 10px;
+        }
+    }
+
+    @include respond(tab-port) {
+        flex-direction: row;
+        align-items: flex-start;
+
+        .logo {
+            margin-bottom: 1rem;
+        }
+
+        .nav-links li {
+            margin-right: 0;
+            margin-bottom: 10px;
+            padding: 6px;
+        }
+    }
+
+    @include respond(phone-xs) {
+        .logo {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+            margin-bottom: 10px;
+            padding: 6px;
+        }
+    }
+}
